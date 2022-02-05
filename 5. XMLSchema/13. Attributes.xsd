@@ -1,0 +1,35 @@
+<!-- Attributes -->
+    The attribute declarations always come last, after the element declarations.
+    (le dichiarazione di attributi viene sempre dopo quella degli elementi)
+    Declared localy or globaly
+    Always simple type
+
+    <attribute name=“attr1” type=“string” /> <!-- attributo globale -->
+    
+    <element name=“testelement”>
+            <complexType>
+            <sequence>
+            ...
+            </sequence>
+            <attribute ref=“attr1” />          <!-- attributo reference -->
+            <attribute name=“attr2” type=“string” /> <!-- attributo locale -->
+        </complexType>
+    </element>
+ 
+    default = automaticamente aggiunto all'attributo
+    fixed = automenticamente aggiunto all'attributo, ma non si può cambiare
+
+    Questi attributi hanno senso solo all'interno di elementi non negli attributi globali
+    use= ”optional”
+    use= ”required”
+    use= ”prohibited”   <!-- Si capisce l'attributo di questo dal video (si usa per gli elementi derivate (quelli ristretti))-->
+
+    <xs:attribute name="lang" type="xs:string" use="required" fixed="EN"/>
+
+
+ 
+ 
+ 
+ 
+ 
+ 

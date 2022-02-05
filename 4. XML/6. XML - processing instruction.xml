@@ -1,0 +1,11 @@
+<!-- XML - processing instructions -->
+    allow documents to contain instructions for applications
+        <? target instructions?>
+    can be used to pass the information to applications
+
+        <?xml-stylesheet type="text/xsl" href="journey.xslt"?>
+
+        <?php
+            mysql_connect(”base.pl”, ”kowalski”, ”password”);
+            mysql_close()
+        ?>

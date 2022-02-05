@@ -1,0 +1,13 @@
+<!-- Annotations -->
+    for people <documentation>
+    for applications <appinfo>
+
+    <xsd:annotation>
+        <xsd:documentation> 
+            This text is intended for humans.
+        </xsd:documentation>
+        
+        <xsd:appinfo>
+            <someXML>any well-formed XML</someXML>
+        </xsd:appinfo>
+    </xsd:annotation>

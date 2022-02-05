@@ -1,0 +1,26 @@
+Tree.XML:
+<?xml version=1.0? encoding="UTF-8" >
+<!DOCTYPE tree [
+<!ELEMENT tree (#PCDATA)>
+]>
+
+Tree.DTD:
+<?xml version="1.0" encoding="UTF-8" ?>
+<ELEMENT tree (#PCDATA)>
+...
+
+Tree.XML:
+<?xml version=1.0 standalone= ” yes” ?>
+<!DOCTYPE tree SYSTEM ” Tree.dtd”>
+...
+
+<!-- An External DTD Declaration -->
+    <!-- Private -->
+        <!DOCTYPE name_of_the_root_element SYSTEM "URL_DTD">
+        <!DOCTYPE tree SYSTEM "Tree.dtd">
+
+    <!-- Public -->
+        <!DOCTYPE name_of_the_root_element PUBLIC "DTD_name" 
+        "URL_DTD">
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">

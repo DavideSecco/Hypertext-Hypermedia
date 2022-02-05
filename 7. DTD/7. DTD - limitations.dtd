@@ -1,0 +1,8 @@
+<!-- DTD - limitations -->
+	No default values for elements
+	DTD does not support namespace
+	No possibility to limit the text content of documents
+	No data types other than textual
+	Inability to define own types of elements
+	Poor modularity
+	Non-compliance with XML specification

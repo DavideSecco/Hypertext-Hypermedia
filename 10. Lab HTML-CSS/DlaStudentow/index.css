@@ -1,0 +1,96 @@
+html, body {
+	background-color: #777;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+nav {	
+	width:20%; 
+	float:right; 
+	padding:1%; 
+	overflow:hidden; 
+}
+nav ul li {
+	list-style-type:none; 
+	padding:0 0 0 10px;
+}
+footer { 
+	height:50px;
+	background:#000;
+	color:#FFF;
+	text-align:center;
+	margin-top:10px;
+	padding:5px;
+}
+header { 
+	height:100px;	
+	background: #961414; 
+	margin: 0 0 10px 0; 
+}
+
+h1 {
+    color: #f70404; 
+}
+h2{
+    color: #0bf154;
+}
+a {
+	text-decoration: none;
+}
+nav ul > li:hover  {
+   background-color: #C0C0C0;
+}
+nav ul > li:hover > a	{
+	color: #002080;
+}
+nav ul li a.active{
+   background-color: #C0C0C0;
+	color: #002080;
+}
+#content { 
+	width:75%; 
+	background: #C0C0C0; 
+	float:left; 
+	padding:1%; 
+	overflow:hidden; 
+}
+#wrapper { 
+	width:90%;
+	overflow:hidden;
+	margin:0 auto;
+	min-height:calc(100% - 52px); 
+	padding:1%; 
+}
+/*RWD - responsive web design*/
+@media only screen and (max-width: 600px) {
+    .hide{
+        display: none;
+    }
+}
+
+.left
+{ 
+float: left;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+img:hover{
+    opacity: 0.5;
+    cursor:pointer
+}
+
+th, td {
+    border-style: groove;
+    width: 80%;
+}
+
+table{
+    width: 100%;
+    border:5px solid #f70404;
+}
+
+.lefttext{
+    text-align: right;
+}

@@ -1,0 +1,117 @@
+<!-- Element declaration -->
+    XML Schema:
+        <xsd:element name=”Name_of_the_element”  type=”Data_Type” ... attributes/>
+    XML File:
+        < Name_of_the_element > 
+            element content according to Data_Type
+        </ Name_of_the_element >
+
+    Example: 
+        XML Schema: <xsd:element name=”surname”  type=”xsd:string” /> 
+        XML File: <surname> Kowalski </ surname>
+        
+    
+<!-- Elements attributes --> 
+    ◦ name 
+    ◦ type 
+    ◦ id 
+    ◦ minOccurs
+    ◦ maxOccurs
+    ◦ ref
+
+    <!-- minOccurs, maxOccurs --> 
+        default value 
+            ◦   minOccurs = ”1” 
+            ◦   maxOccurs = ”1” 
+        optional 
+        ◦   minOccurs = ”0” 
+        Unspecified number of occurrences 
+        ◦   maxOccurs = ”unbounded (non ci sono vincoli)
+
+        <schema xmlns=“http://www.w3.org/2001/XMLSchema>
+            ...
+            <element name=“name” type=“string” minOccurs=“0” maxOccurs=“unbounded” />
+            <element name=“surname” type=“string” minOccurs=“1” maxOccurs=“1” />
+            <element name=“phone” type=“long” minOccurs=“1” maxOccurs=“3” />
+            ...
+        </schema>
+
+<!-- Element declaration -->
+    Elements
+    ◦ Global
+    ◦ Local
+    ◦ References
+
+    <!-- Global elements -->
+        Placed directly in the main element (MESSI DIRETTAMENTE NELLA ROOT DEL FILE)
+        Visible in the whole scheme (SONO VISIBILI IN TUTTO LO SCHEMA)
+        They have a name
+        They have a type
+        They can have optional attributes
+        
+        XML Schema:
+            <schema xmlns=“http://www.w3.org/2001/XMLSchema>
+            ... 
+            <element name=“FirstGlobalElement” type=“string” />
+            ... 
+            </schema>
+
+        XML File:
+            <FirstGlobalElement>
+                content
+            </FirstGlobalElement>
+
+    <!-- Local elements -->
+        They are defined in the context of other elements
+        They have a name, type, they can have optional attributes
+
+            XML Schema:
+            <schema xmlns=“http://www.w3.org/2001/XMLSchema>
+                <element name=“FirstGlobalElement”>
+                ...
+                    <element name=“LocalElement” type=“float” />
+                ... 
+                </element>
+
+                <element name=“SecondGlobalElement” >
+                ...
+                    <element name=“LocalElement” type=“string” />
+                ... 
+                </element>
+            </schema>
+
+            XML File:
+            <FirstGlobalElement>
+                <LocalElement>1.2 </LocalElement>
+            </FirstGlobalElement>
+            <SecondGlobalElement>
+                <LocalElement>plain text </LocalElement>
+            </SecondGlobalElement>
+
+    <!-- References to the elements -->
+        They have the ref attribute instead of the name attribute
+        They do not have any type attribute
+        They allow multiple use of element declaration
+        They can only refer to global elements(?)
+
+        XML Schema:
+            <schema xmlns=“http://www.w3.org/2001/XMLSchema>
+                <element name=“FirstElement” >
+                ...
+                    <element ref=“SecondElement” />
+                ... 
+                </element>
+
+                <element name=“SecondElement” type=“string” />
+            </schema>
+        
+        XML File:
+            <FirstElement>
+                <SecondElement>wartość</SecondElement>
+            </FirstElement>
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!-- Lists -->
+    The list element defines a simple type element as a list of values of a specified data type.
+    The list can only contain simple types
+    You cannot create a list of lists
+    All list items of the same type
+    List elements in XML documents must be separated by whitespace
+
+    Facets allowed on list
+    ◦ length, minLength, maxLength
+    ◦ they determine the length of the list
+    ◦ enumeration, pattern
+    ◦ they specify the values of the list
+
+    XML Schema:
+        <xsd:simpleType name="numbersType">
+            <xsd:list itemType=" xsd:positiveInteger "/>
+        </xsd:simpleType>
+
+        <xsd:element name="numbers" type="numbersType "/>
+
+    XML file:
+        <numbers>2 10 6 1 15 150</numbers>
+
+<!-- Union -->
+Connecting any simple types into one
+You can combine different types
+
+    <!-- Esempio 1: -->
+        <simpleType name=“Type1”>       <!-- creo il primo tipo -->
+            <restriction base=“string”>
+                <enumeration value=“One” />
+                <enumeration value=“Two” />
+            </restriction>
+        </simpleType>
+
+        <simpleType name=“Type2” >      <!-- creo il secondo tipo -->
+            <restriction base="positiveInteger">
+                <maxInclusive value="2"/>
+            </restriction>
+        </simpleType>
+
+        <simpleType name=“unionType” >  <!-- UNISCO i due tipi-->
+            <union memberTypes=“Type1 Type2”>
+        </simpleType>
+
+        <element name=“class” type=“unionType” />
+
+    <!-- Esempio 2: -->
+    <simpleType name=“unionType” >      <!-- scelto il nome del tipo unito-->
+        <union>
+            <simpleType>                <!-- dichiaro il 1 tipo -->
+                <restriction base=“string”>
+                    <enumeration value=“One” /> ...
+                </restriction>
+            </simpleType>
+
+            <simpleType>                <!-- dichiaro il 2 tipo -->
+                <restriction base="positiveInteger">
+                    <maxInclusive value="2"/>
+                </restriction>
+            </simpleType>
+        </union>
+    </simpleType>
+
+    Qui possiamo vedere due versioni della stessa cosa Ma nel secondo modo i simpletype non sono riutilizzabili perchè sono all'interno.
+
+    XML file:
+    <class>1</class>
+    <class>One</class>
+ 

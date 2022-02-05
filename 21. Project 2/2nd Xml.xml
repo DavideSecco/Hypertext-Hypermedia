@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="2nd Xslt.xslt"?>
+<topic>
+	<author owner="yes">
+        <name> Davide </name>
+        <surname> Secco </surname>
+    </author>
+
+	<menu>
+		<link source="history.html"> History </link>
+		<link source="rules.html"> Rules </link>
+		<link source="skills.html"> Skills </link>
+	</menu>
+
+	<section kind="introduction">
+		<text>
+			Volleyball is a team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a 
+			ball on the other team's court under organized rules. 1 It has been a part of the official program of the Summer Olympic Games since Tokyo 1964. 
+			Beach Volleyball was introduced to the programme at the Atlanta 1996. The adapted version of volleyball at the Summer Paralympic Games is sitting volleyball. 
+		</text>
+	</section>
+
+	<section kind="short_rules">
+		<keytopic>Short Rules</keytopic>
+		<text>
+			The complete set of rules is extensive, but play essentially proceeds as follows: a player on one of the teams begins a 'rally' by serving 
+			the ball (tossing or releasing it and then hitting it with a hand or arm), from behind the back boundary line of the court, over the net, and 
+			into the receiving team's court.3 The receiving team must not let the ball be grounded within their court. The team may touch the ball up to 
+			three times to return the ball to the other side of the court, but individual players may not touch the ball twice consecutively.3 Typically, 
+			the first two touches are used to set up for an attack. An attack is an attempt to direct the ball back over the net in such a way that the team 
+			receiving the ball is unable to pass the ball and continue the rally, thus, losing the point. The team that wins the rally is awarded a point and 
+			serves the ball to start the next rally. A few of the most common faults include:
+		</text>	
+			
+		<rules>
+			<rule id="1">causing the ball to touch the ground or floor outside the opponents' court or without first passing over the net; </rule>
+			<rule id="2">catching and throwing the ball; </rule>
+			<rule id="3">double hit: two consecutive contacts with the ball made by the same player; </rule>
+			<rule id="4">four consecutive contacts with the ball made by the same team; </rule>
+			<rule id="5">net foul: touching the net during play; </rule>
+			<rule id="6">foot fault: the foot crosses over the boundary line when serving. </rule>
+		</rules>
+			
+	</section>
+
+	<section kind="conclusion">
+		<keytopic>Final comment</keytopic>
+		<text>
+			The ball is usually played with the hands or arms, but players can legally strike or push (short contact) the ball with any part of the body.
+			A number of consistent techniques have evolved in volleyball, including spiking and blocking (because these plays are made above the top of the net, the vertical jump is an athletic skill emphasized in the sport) as well as passing, setting, and specialized player positions and offensive and defensive structures.4 
+		</text>	
+	</section>
+
+	<!-- --> 
+	<raster>
+		<image source="media/raster/raster1.jpg" resolution="3840x2160"> volley </image>	
+		<image source="media/raster/raster2.jpg" resolution="3840x2160"> volley </image>	
+		<image source="media/raster/raster3.jpg" resolution="3840x2160"> volley </image>	
+		<image source="media/raster/raster4.jpg" resolution="3840x2160"> volley </image>	
+		<image source="media/raster/raster5.jpg" resolution="3840x2160"> volley </image>	
+		<image source="media/raster/raster6.jpg" resolution="3840x2160"> volley </image>	
+	</raster>
+
+	<playerInformation>
+		<player> 
+			<name> Ivan Zaytsev </name> 
+			<role>Opposite</role>
+			<dateOfBirth>1989-02-01</dateOfBirth>
+			<height>202</height>
+			<debutWithClub>2009-09-09</debutWithClub>
+		</player>
+
+		<player captain="yes"> 
+			<name> Simone Giannelli </name>	 
+			<role>Setter</role>
+			<dateOfBirth>1998-02-01</dateOfBirth>
+			<height>198</height>
+			<debutWithNationalTeam>2017-07-12</debutWithNationalTeam>
+		</player>
+
+		<player> 
+			<name> Massimo Colaci </name> 
+			<role>Libero</role>
+			<dateOfBirth>1990-04-06 </dateOfBirth>
+			<height>185</height>
+			<debutWithNationalTeam>2013-09-09</debutWithNationalTeam>
+		</player>
+	</playerInformation>
+	
+	<links>
+		<link source="https://en.wikipedia.org/wiki/Volleyball">Wikipedia</link>
+		<link source="https://www.pzps.pl/en/">Poland</link>
+		<link source="https://www.federvolley.it/">Italy</link>
+	</links>
+
+	<visitors>1000</visitors>
+	<visitors2>0.63</visitors2>
+
+</topic>

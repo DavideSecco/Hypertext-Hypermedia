@@ -1,0 +1,55 @@
+<!-- Attributes -->
+	attribute declaration
+		<!ATTLIST 	element 				attribute 				type 				default >
+					name of the element		name of the attribute	the attribute type	default value or requirement to occur
+
+	<!-- EXAMPLE --> <!ATTLIST car colour (black|red) ”black”>	<car colour= ”black” >...</car>
+	
+	types for attribute
+	◦ CDATA
+	◦ ID
+	◦ IDREF
+	◦
+	…
+
+<!-- Attribute types -->
+	string:
+		<!ATTLIST document no CDATA >
+		<document no=”1.2.3”> ... </document >
+
+	enumeration (only certain values are allowed):
+		<!ATTLIST document status (project | edition | ready) >
+		<document status=”edition”> ... </document>
+
+	modular:
+		<!ENTITY % status ” status (project | edition | ready)”>
+		<!ENTITY % no ”no CDATA”>
+		<!ATTLIST document %no; % status;>
+	
+<!-- Default values -->
+	accepted if no value is given in the document
+	<!ATTLIST document status (project | edition | ready) ’edition’>
+	
+	described by the keyword
+		◦ #REQUIRED
+		◦ #IMPLIED 
+		◦ #FIXED 				the value cannot be changed
+	<!ATTLIST document status (project | edition | ready) #REQUIRED>
+	<!ATTLIST document status (project | edition | ready) #IMPLIED>
+	<!ATTLIST document status (project | edition | ready) #FIXED ’ 14.11’>
+	
+<!-- Global attributes -->
+	Each element can use them
+		<!ENTITY % x.global
+		‘ status (project | edition | ready) #REQUIRED 
+		no CDATA #IMPLIED ‘>
+		...
+		<!ELEMENT document (#PCDATA | chapter)*>
+		<!ATTLIST document %x.global;>
+		...
+		<!ELEMENT chapter (#PCDATA)>
+		<!ATTLIST chapter %x.global;>
+		...
+
+
+	

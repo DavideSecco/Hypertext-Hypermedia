@@ -1,0 +1,29 @@
+<!-- anyAttribute --> 
+    Permette di aggiungere attributi che non sono specificati dallo schema
+        <xs:element name="person">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="firstname" type="xs:string"/>
+                    <xs:element name="lastname" type="xs:string"/>
+                    <xs:any minOccurs= ”0” />
+                </xs:sequence>
+
+            <xs:anyAttribute/>
+
+            </xs:complexType>
+        </xs:element> 
+
+<!-- attributeGroup -->
+    <element name=“testelement2”>
+        ...
+        <attributeGroup ref=“MyAttrGroup1” />   <!-- faccio riferimento a un gruppo di attrubti -->
+        ...
+    </element>
+
+    <attributeGroup name=“MyAttrGroup1”>    <!-- creo un gruppo di attributi -->
+        <attribute name=“attr1” type=“long” />
+        <attribute name=“attr2” >
+        <simpleType> ... </simpleType>
+        </attribute>
+    </attributeGroup>
+

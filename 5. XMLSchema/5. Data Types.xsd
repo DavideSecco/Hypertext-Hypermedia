@@ -1,0 +1,134 @@
+<!-- Data types -->
+    built-in =      are part of the standard
+    user-defined =  are types that the user have defined
+    simple type =   when you want to create a new type that is a refinement of a built-it type
+    complex type =  can contain sub element. Use when you want to define child elements and/or attributes of an element
+    
+    Primitive
+        ◦ they do not require defining derived
+        ◦ derived from other types derived
+        ◦ derived form other types
+
+<!-- Complex types -->
+    Only the type defined globally 
+    and named can be used many times
+
+    <xsd:schema xmlns:xsd=“http://www.w3.org/2001/XMLSchema>
+        <!-- qui definisco Studente, ma poi non posso riutilizzarlo (?)-->
+        <xsd:element name=“Student”>
+                <xsd:complexType>
+                ...
+                </xsd:complexType>
+        </xsd:element>
+
+        <!-- Definiizione più furba: Teacher è di tipo person che definisco sotto -->
+        <xsd:element name=“Teacher” type=“personType” />
+
+        <xsd:complexType name=“personType”>
+        ...
+        </xsd:complexType>
+    </xsd:schema>
+
+    Esempio: 
+        <xsd:element name=“Student” type=“personType”/>
+        <xsd:element name=“Teacher” type=“personType” />
+
+        <xsd:complexType name=“personType”>
+            .....
+            <xsd:element name=“Surname” type=“xsd:string” />
+            <xsd:element ref=“Name” />
+            <xsd:element name=“Phone” type=“xsd:long” />
+            .....
+        </xsd:complexType>
+
+        <xsd:element name=“Name” type=“xsd:string” />
+
+<!-- Order indicators (for Complex types) -->
+    ◦ way of occurrence of subelements in the complex type
+    ◦ sequence
+    ◦ choice
+    ◦ all
+
+    <!-- Serve (?) -->
+        <xsd:element name=“Student” type=“personType” />
+        <xsd:element name=“Teacher” type=“personType” />
+
+        <xsd:complexType name=“personType”>
+            .....
+            <xsd:element name=“Surname” type=“xsd:string” />
+            <xsd:element ref=“Name” />
+            <xsd:element name=“Phone” type=“xsd:long” />
+            .....
+        </xsd:complexType>
+
+        <xsd:element name=“Name” type=“xsd:string” />
+
+    <!-- sequence -->
+        ◦ strict order of sub-elements
+        The sentece in the XML document must appear in the order they are declare in the schema file
+        
+        <xsd:complexType name=“personType”>
+            <xsd:sequence>
+                <xsd:element name=“Surname” type=“xsd:string” />
+                <xsd:element name=“Name” type=“xsd:string” />
+                <xsd:element name=“Phone” type=“xsd:long” />
+            </xsd:sequence>
+        </xsd:complexType>
+        
+        ◦ Equivalent in DTD: (non ci interessa ora)
+            <!ELEMENT xyz (Surname, Name, Phone)>
+
+    <!-- choice (LO USI PER LE ALTERNATIVE) -->
+        ◦ only one of the declared child elements
+            <xsd:complexType name=“Dane”>
+                <xsd:choice>
+                    <xsd:element name=“Student” type=“xsd:string” />
+                    <xsd:element name=“Assistant” type=“xsd:string” />
+                    <xsd:element name=“Professor” type=“xsd:string” />
+                </xsd:choice>
+            </xsd:complexType>
+
+        ◦ Equivalent in DTD:
+            <!ELEMENT xyz (Student | Assistant | Professor)>
+
+    <!-- Nesting choice and sequence -->
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name=“a” type=“xsd:long” />
+                <xsd:element name=“b” type=“xsd:string” />
+            </xsd:choice>
+            <xsd:sequence>
+                <xsd:element name=“c” type=“xsd:int” />
+                <xsd:element name=“d” type=“xsd:float” />
+            </xsd:sequence>
+        </xsd:sequence>
+
+        Vedi se hai capito con questa prova:
+            abcd        wrong
+            acd         correct
+            bcd         correct
+            bc          wrong
+
+        ◦ Equivalent in DTD:
+            <!ELEMENT xyz ((a | b), (c, d))>
+
+    <!-- all -->
+        ◦ all elements in any order (devono apparire)
+        
+        <xsd:all>
+            <xsd:element name=“Surname” type=“xsd:string” />
+            <xsd:element ref=“Name” />
+            <xsd:element name=“Phone” type=“xsd:long” />
+        </xsd:all>
+
+        ◦ limitations all
+            ◦ maxOccurs = ”1”, minOccurs = ”0” or ”1”
+            ◦ all cannot be nested within sequence, choice, all
+        ◦ in all only elements
+        ◦ increasing the computational complexity of validating parsers
+
+
+
+
+
+

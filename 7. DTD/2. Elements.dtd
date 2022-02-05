@@ -1,0 +1,25 @@
+<!-- Elements -->
+    Element declaration
+        <!ELEMENT name_of_element type_of_the_content>
+
+        implementation:
+        <name_of_element>
+            content according to type
+        </name_of_element>
+        
+        <!-- -->
+        <!ELEMENT name (#PCDATA)>
+        <name>
+            Kowalski
+        </name>
+        <person>
+            Kowalski
+        </person>
+
+    Element content
+        ◦ Content type
+            ◦ chars (#PCDATA)
+            ◦ elements
+            ◦ mixed
+        ◦ EMPTY
+        ◦ ANY

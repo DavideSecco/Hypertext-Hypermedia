@@ -1,0 +1,16 @@
+<!-- Number of occurences -->
+	No symbol 		One and only one 					Element
+	? 				Zero or one 						optional element
+	*				zero or any number of times			Optional element iteration
+	+				one or more times 					iteration of the obligatory element
+
+	<!-- DTD: -->
+	<!ELEMENT computer (disk, disk, disk)>
+	<!ELEMENT computer (disk*)>
+
+	<!-- XML -->
+	<computer> 
+		<disk> 1 </disk>
+		<disk> 2 </disk>
+		<disk> 3 </disk>
+	</computer>

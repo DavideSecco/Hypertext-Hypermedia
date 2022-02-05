@@ -1,0 +1,27 @@
+/* Text properties: */
+    ◦ text-indent, text-align, text-decoration, text-shadow, letter￾spacingtext-transform
+    ◦ word-spacing
+    ◦ letter-spacing
+    ◦ text-decoration (none, underline, overline, line-through, blink)
+    ◦ vertical-align
+    ◦ text-transform (capitalize, uppercase, lowercase)
+    ◦ text-align
+    ◦ text-indent
+    ◦ line-height
+
+/* Font properties */
+    font (serif, ...)
+    font-style (normal, italic, ...)
+    font-variant (normal, small-caps, ...)
+    font-weight (normal, bold, 100, ...)
+    font-size (small, medium, large, ...)
+    font-family
+
+/* Color properties */
+    – color
+    – background
+    – background-color
+    – background-image
+    – background-repeat
+    – background-attachment
+    – background-position

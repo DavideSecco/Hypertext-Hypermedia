@@ -1,0 +1,18 @@
+<!-- XML - declarations -->
+    <message>
+        Bad nesting <comp><mon> LCD </comp></mon>
+    </message>
+
+    <!-- an example of comment CDATA section -->
+    <message>
+        <![CDATA[Bad nestin <comp><mon> LCD </comp></mon>]]>
+    </message>
+
+    basic declaration
+        ◦ comments <!–- comment content -->
+        ◦ CDATA <![CDATA[text]]>
+    declaration used in DTD
+        ◦ <!DOCTYPE ...> <!ATTLIST …> …
+
+
+    

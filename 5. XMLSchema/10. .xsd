@@ -1,0 +1,57 @@
+<!-- Multiple Facets - "and" them together, or "or" them together? -->
+    An element declared to be of type TelephoneNumber must be a string of length=8 and the string must follow the pattern: 3 digits, dash, 4 digits.
+        <xsd:simpleType name="TelephoneNumberType"> 
+            <xsd:restriction base="xsd:string">
+                <xsd:length value="8"/>
+                <xsd:pattern value="\d{3}-\d{4}"/>
+            </xsd:restriction>
+        </xsd:simpleType> 
+    
+        <xsd:simpleType name="shapeType">
+            <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="circle"/>
+                <xsd:enumeration value="triangle"/>
+                <xsd:enumeration value="square"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+
+    An element declared to be of type shape must be a string with a value of either circle, or triangle, or square.
+    Patterns , enumerations => " or " them together     <!-- enumeration obbliga a scelta e anche pattern in un certo senso -->
+    All other facets => " and " them together           <!-- Con tutti gli altri facet devi sempre metterli tutti -->
+
+
+<!-- Fixing a facet value -->
+    <xsd:simpleType name= "daysType">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="1" fixed="true"/>
+            <xsd:maxInclusive value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+<!-- Questo elemento deriva da quello sopra, e quello sopra ha fissato che il valore minimo sia 1. L'elemento derivato non può cambiarlo -->
+    <xsd:simpleType name= "myDaysType">
+        <xsd:restriction base=" daysType ">
+            <xsd:minInclusive value="7"/> <!-- NON AMMESSO!!!!-->
+            <xsd:maxInclusive value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+Provi a cambiare valore in un elemento derivato, ma non puoi cambiare il valore  nell' elemento padre è fixed="true"
+    
+
+<!-- Summary (riassunto) of declaring elements -->
+    <xsd:element name="name" type="type" minOccurs="int" maxOccurs="int"/>
+
+    <xsd:element name="name" minOccurs="int" maxOccurs="int">
+        <xsd:complexType>
+        …
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="name" minOccurs="int" maxOccurs="int">
+        <xsd:simpleType>
+            <xsd:restriction base="type">
+            …
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>

@@ -1,0 +1,77 @@
+<!-- Facets of the string -->
+    The string primitive datatype has six optional facets:
+    ◦ length
+    ◦ minLength
+    ◦ maxLength
+    ◦ pattern
+    ◦ enumeration
+    ◦ whitespace (legal values: preserve, replace, collapse)
+    
+    <simpleType name=“AustrianZIPCode” >
+        <restriction base=“string”>
+        <length value=“4” />    <!-- La lunghezza sarà 4 -->
+        </restriction>
+    </simpleType>
+
+    <simpleType name=“InternationalZIPCode” >
+        <restriction base=“string”>
+            <minLength value=“4” />
+            <maxLength value=“6” /> <!-- la lunghezza sarà compresa fra 4 e 6-->
+        </restriction>
+    </simpleType>
+
+    <!-- enumeration -->
+        List of predefined values (per forzare il valore fra alcuni scelti)
+            <simpleType name=“dayType” >
+                <restriction base=“string”>
+                    <enumeration value=“Monday” />
+                    <enumeration value=“Tuesday” />
+                    <enumeration value=“Wednesday” />
+                    <enumeration value=“Thursday” />
+                    <enumeration value=“Friday” />
+                </restriction>
+            </simpleType>
+
+        XML File:
+            <day> Tuesday </day>
+
+    <!-- pattern -->
+        The value of pattern must be a regular expression.
+        Si definisce un set di valori validi
+            [0-9] --> range di valori
+            {3} --> quanti valori devi mettere
+            esempio: [0-9]{2} --> 2 valori fra 0 e 9
+        
+        <xsd:simpleType name="typNIP">
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{3})|([0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2})"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        
+        XML File:
+            111-22-33-444-555-666-77-88
+
+    <!-- Regular expressions -->
+        \p{L}   A letter, from any language
+        \p{Lu}  An uppercase letter, from any language
+        \p{Ll}  A lowercase letter, from any language
+        \p{N}   A number - Roman, fractions, etc
+        \p{Nd}  A digit from any language
+        \p{P}   A punctuation symbol
+        \p{Sc}  A currency sign, from any language <xsd:simpleType name="money">
+        
+        XML Schema:
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="\p{Sc}\p{Nd}+(\.\p{Nd}\p{Nd})?"/> <!-- NOTA: "?"-->
+                </xsd:restriction>                                    <!-- Sotto c'è la spiegazione -->   
+                </xsd:simpleType>
+            <xsd:element name="cost" type="money"/>
+
+        XML File:    
+            <cost>$45.99</cost>
+            <cost>¥300</cost>
+
+        Currency sign Digit from any language
+        ? --> means 0 or 1 times
+        * --> means 0 or many times
+        + --> means 1 or many times   

@@ -1,0 +1,61 @@
+XML namespaces 
+    necessary when we have a name conflict because we use different markup languages 
+    Marker language treated as a set of names - namespace Namespace 
+        ◦ namespace is defined by xmlns:prefix 
+        ◦ prefix is used for every tag or attribute from the namespace 
+        ◦ identified by URI 
+        ◦ each tag from the namespace has a prefix
+
+Un namespace si devinisce con xmlns:"nome_del_namespace".
+Namespace in document 
+◦ no namespace 
+    <?xml version="1.0"?>   
+        <book>      
+            <title> Digital documents </title> 
+        </book>
+◦ one 
+    <?xml version="1.0"?>   
+        <bk:book xmlns:bk='http://www.books.org/books'> 
+            <bk:title> Digital documents </bk:title> 
+        </bk:book>
+◦ many 
+    <?xml version="1.0"?>   
+    <bk:book xmlns:bk='http://www.books.org/books' xmlns:isbn='urn:ISBN:0-395-36341-6'> 
+        <bk:title> Digital documents </bk:title> 
+        <isbn:number>1568491379</isbn:number>  
+    </bk:book>
+◦ local 
+    <?xml version="1.0"?>     
+        <bk:book xmlns:bk='http://www.books.org/books'> 
+            <bk:title> Digital documents </bk:title> 
+            <isbn:number xmlns:isbn='urn:ISBN:0-395-36341-6'> 1568491379 </isbn:number> 
+        </bk:book>      
+◦ default:
+    <?xml version="1.0"?>     
+        <book xmlns='http://www.books.org/books'> 
+            <title> Digital documents </title> 
+            <isbn:number xmlns:isbn='urn:ISBN:0-395-36341-6'> 1568491379 </isbn:number> 
+        </book>
+
+
+XML standard namespaces: xsd:       http://www.w3.org/2001/XMLSchema-instance 
+
+
+Questi due schemi sono assolutamente identici ma 1 ha il namespace di default senza prefisso, il secondo ha prefisso standard per XML Schema:
+    <schema xmlns="http://www.w3.org/2001/XMLSchema"> 
+        <element name=“Person”> 
+            <complexType> 
+            ... 
+            </complexType> 
+        </element> 
+        ... 
+    </schema>
+
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+        <xsd:element name=“Person”> 
+            <xsd:complexType> 
+            ... 
+            </xsd:complexType> 
+        </xsd:element> 
+        ... 
+    </xsd:schema>

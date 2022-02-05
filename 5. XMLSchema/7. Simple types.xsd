@@ -1,0 +1,57 @@
+<!-- Simple types -->
+    Creating your own simple datatypes
+    Simple types inherit (ereditare) from:
+        ◦ built-in types
+        ◦ other simple types
+    Only simple content (not sub element or attributes are allowed in simple types)
+
+<!-- General form of creating a new datatype (SIMPLETYPE) by specifying facet values -->
+        <simpleTypename= “name” >
+            <restriction base=“source”>
+                <facet value= “...” />
+                <facet value= “...” />
+                ...
+            </restriction>
+        </simpleType>
+
+        Facets:
+            - length
+            - minlength
+            - maxlength
+            - pattern
+            - enumeration
+            - minInclusive
+            - maxInclusive
+            - minExclusive
+            - maxExclusive
+
+        Sources:
+            - string
+            - boolean
+            - number
+            - float
+            - double 
+            - duration
+            - dateTime
+            - time
+
+    Example of creating a new datatype by specifying facet values
+    <xsd:simpleType name="TelephoneNumberType">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="8"/>             <!-- Deve essere lunga 8 caratteri -->
+            <xsd:pattern value="\d{3}-\d{4}"/>  <!-- Deve poi seguire la regola: 3numeri - 4 numeri-->
+        </xsd:restriction>
+    </xsd:simpleType> 
+    
+
+    
+
+        
+        
+
+
+
+
+
+
+

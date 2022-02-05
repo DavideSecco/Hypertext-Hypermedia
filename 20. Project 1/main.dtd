@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT topic (author, links, section*, raster, playerInformation, trophies)>
+
+
+
+<!-- ENTITY -->
+<!-- <!ENTITY % option  SYSTEM '(yes | no) "no"'> -->
+<!ENTITY % option '(yes | no) "no"'>
+<!ENTITY % structure '(#PCDATA | keytopic | rules)*'> 
+
+<!-- author type -->
+<!ELEMENT author (name, surname)>
+<!ATTLIST author owner %option;>
+<!ELEMENT surname (#PCDATA)>
+
+
+<!-- link type -->
+<!ELEMENT links (link*)>
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link source CDATA #REQUIRED>
+
+<!-- section type -->
+<!ELEMENT section (text*)>
+
+<!ELEMENT text %structure;>
+
+<!ELEMENT rules (rule*)>
+
+<!ELEMENT keytopic (#PCDATA)>
+
+<!ELEMENT rule (#PCDATA)>
+
+<!ATTLIST section kind (introduction | short_rules | conclusion) #REQUIRED>
+<!ATTLIST rule id CDATA #REQUIRED>
+
+<!-- raster type -->
+<!ELEMENT raster (image*)>
+
+<!ELEMENT image (#PCDATA)>
+<!ATTLIST image source CDATA #REQUIRED>
+<!ATTLIST image resolution CDATA #IMPLIED>
+
+<!-- player information -->
+<!ELEMENT playerInformation (player*)>
+
+<!ELEMENT player (name, role, dateOfBirth, height, (debutWithNationalTeam | debutWithClub)) >
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT role (#PCDATA)>
+<!ELEMENT dateOfBirth (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT debutWithNationalTeam (#PCDATA)>
+<!ELEMENT debutWithClub (#PCDATA)> 
+
+<!-- ENTITY option and atribute captain-->
+<!ATTLIST player captain %option;>
+
+<!-- trophies information -->
+<!ELEMENT trophies (#PCDATA)>

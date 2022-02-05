@@ -1,0 +1,25 @@
+html, body {
+	background-color: rgb(152, 251, 159);
+	color: #000;
+	margin: 10px;
+	padding: 0;
+	width: 100%;
+}
+
+header { 
+	height:100px;	
+	background: #018751; 
+	margin: 0 0 10px 0; 
+}
+
+h1 {
+    color: #005b37; 
+}
+
+#content { 
+	width:75%; 
+	background: #acff83; 
+	float:left; 
+	padding:1%; 
+	overflow:hidden; 
+}

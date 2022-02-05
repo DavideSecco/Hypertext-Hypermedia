@@ -1,0 +1,42 @@
+<!-- Facets of the integer datatype --> 
+    The integer datatype has 8 optional facets:
+        totalDigits
+        pattern
+        whitespace
+        enumeration
+        maxInclusive
+        maxExclusive
+        minInclusive
+        minExclusive
+
+        <simpleType name=“gradeType” >
+            <restriction base=“Integer”>
+                <minInclusive value=“1” />
+                <maxInclusive value=“5” /> <!-- I valori possono andare da 1 a 5 -->
+            </restriction>
+        </simpleType>
+
+<!-- Facets of the decimal datatype -->
+        The decimal datatype has 9 optional facets:
+            ◦ totalDigits 
+            ◦ fractionDigits
+            ◦ pattern
+            ◦ whitespace
+            ◦ enumeration
+            ◦ maxInclusive
+            ◦ maxExclusive
+            ◦ minInclusive
+            ◦ minExclusive
+        
+        <simpleType name=“4digitnumberType” >
+            <restriction base=“decimal”>
+                <totalDigits value=“4” />
+            </restriction>
+        </simpleType>                   Massimo numero di cifre in generale(?)
+
+        <simpleType name=“4plus2digitnumberType” >
+            <restriction base=“decimal”>
+                <totalDigits value=“6”/>
+                <fractionDigits value=“2”/>
+            </restriction>
+        </simpleType>

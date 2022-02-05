@@ -1,0 +1,20 @@
+/* Rules syntax */
+    h2 {
+        color:red
+    }
+
+h2  indicates elements of the document, to be formatted describes the formatting (formatting commands) 
+
+Selector: 
+    name of the elements ( h1, p, div, a, …)
+    class ( .left)
+    identifier ( #left)
+
+
+grouping of declarations and selectors:
+    p,h1 {
+        color:red;
+        font-style:italic;
+    }
+
+

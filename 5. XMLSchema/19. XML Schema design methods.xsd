@@ -1,0 +1,13 @@
+<!-- XML Schema design methods -->
+    We can use 3 strategies:
+        Define the type of each element using a local type
+    
+        Define a series of named complex and simple types at the top level of the
+        XML Schema document and use those names to indicate the types to be
+        used for the elements
+   
+        Define a series of elements and groups of code at the top level of the
+        Schema definition and then refer to those element definitions using the
+        attribute ref
+
+Poi puoi copiare le ultime 3 slide

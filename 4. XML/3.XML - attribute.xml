@@ -1,0 +1,7 @@
+<!-- XML - attribute -->
+    any order of attributes
+    In one element only different attribute names 
+    limitations on the name of the attribute as on the element 
+    attributes have no structure, simply strings (while elements can have subelements)
+
+    <surname maiden_name =”no”> Kowalski </surname>

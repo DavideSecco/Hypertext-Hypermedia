@@ -1,0 +1,20 @@
+<!-- XML - element -->
+    XML is case sensitive
+
+    An element can contain:
+        ◦ text
+        ◦ attributes
+        ◦ other elements
+        ◦ or a mix of the above
+        
+        Empty element: <link href=‘http://www.wp.pl’> </link>
+        
+        <person>
+            Definition for a person
+            <name>Anna</name>
+            <surname >Kowalska</surname>
+            with mixed value
+        </person>
+
+
+

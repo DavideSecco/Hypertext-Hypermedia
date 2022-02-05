@@ -1,0 +1,55 @@
+/* UNIVERSAL SELECTOR */
+    The universal selector, written "*", matches the name of any element 
+    type
+        * {color:red; font-size:14pt; }
+    • Use “Universal selector” if you want all the tags in your web documents have 
+    some common style (for example, all tags don’t have any margin)
+
+/* Descendants */
+    In questo caso all'interno di p non succede nulla, ma se dentro p c'è span il carattere entra in funzione
+    p span {color:red; font-size:14pt; }
+
+/* Child */
+    Sembra funzionare allo stesso identico modo di descenndants:
+    p > span {color:red; font-size:14pt; }
+
+/* sibling */
+    Dopo che c'è stato il titolo h2, solo il primo p usa questi carattere:
+    h2 + p {color:red; font-size:14pt}
+
+/* CLASS */
+    .red {color:red; font-size:14pt}    /*classe che posso utlizzare ovunque*/
+    h1.blue {color:blue}                /*classe che posso usare solo con h1*/
+
+    Posso utilizzarle come:
+    <h2 class="red"> header </h2>
+    <h1 class="blue"> story </h1>
+
+/* ID (non è una ripetizione delle classi, ha senso)*/
+    Use “ID selector” if you want to apply the style for only one occurrence of a certain tag
+
+    #red {color:red; font-size:14pt}
+    h1#blue {color:blue}
+
+/* PSEUDO-CLASSES */
+    a {font-size:12pt; text-decoration:none;} 
+    a:link{color:green}                     /* la scritta diventa verde*/
+    a:visited{color:yellow}                 /* se clicco poi rimane giallo*/
+    a:hover{color:pink; text-decoration:underline} /* se passo sopra il mouse diventa rosa e si sottolinea */
+
+/* PSEUDO-ELEMENT */
+    p::first-letter {color:red; font-size:24pt}
+
+    <h2> Story </h2>
+    <p> First paragraph </p> /* la "F" comparrirà rossa e a 24, il resto normale
+
+/* selektory atrybutu */
+    BOHHHHH
+    <style> 
+        input[type="submit"] {color:red;}
+    </style> 
+
+
+
+
+

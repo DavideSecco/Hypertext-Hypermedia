@@ -1,0 +1,26 @@
+XML - entity
+    dividing the document into smaller parts
+
+        <?xml version=”1.0”?>
+        <!DOCTYPE list [
+        <!ENTITY jnowak SYSTEM ”jnowak.ent”>
+        <!ENTITY jkowalski SYSTEM ”jkowalski.ent”>
+        ]>
+        <list>
+        &jnowak;
+        &jkowalski;
+        </list>
+
+    Divided in: 
+        <data>
+            <person>Jan Nowak</person >
+            <telephone>+48 (58) 347-1234</telephone >
+        </data>
+
+        <data>
+            <person> Jan Kowalski </person >
+            <telephone> +48 (58) 347-1534 </telephone >
+        </data>
+
+
+

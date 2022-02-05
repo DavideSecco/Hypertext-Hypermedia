@@ -1,0 +1,31 @@
+<!-- Declaration v.s. Definition -->
+    Declarations – enable element and attributes with specific names and types to appear in document instance
+        ◦ element declaration
+        ◦ attribute declaration
+
+    Definitions - create a new type
+        ◦ simple type definitions
+        ◦ complex type definitions
+        ◦ attribute group, model group definitions
+    thanks to declaration elements and attributes with specific name and type
+    can appear in a document istance (in a XML file)
+
+<!-- Elements - fixed and default value --> 
+    default = valore di default che ha l'attributo se è vuoto
+        <xsd:element name= ” number” type= ”decimal” default= ”1.0” />
+
+        XML File:   
+        <number>1.0</number>        <!-- corretto -->
+        <number/>                   <!-- corretto -->
+        <number>2.0</number>        <!-- corretto -->
+    
+    fixed = come default ma non puoi rimodificarlo
+        <xsd:element name= ” number” fixed= ”1.0”/>
+
+        XML FIle:
+        <number >1.0</number>       <!-- corretto -->
+        <number/>                   <!-- corretto -->
+        <number>2.0</number >       <!-- non corretto -->
+
+
+

@@ -1,0 +1,13 @@
+<!-- Include and import -->
+    Include and import are used to add multiple schemas to a document:
+        include
+            <schema xmlns=“http://www.w3.org/2001/XMLSchema targetNamespace=“http://www.example.org/NS2”>
+                <include schemaLocation=“SchemaToInclude.xsd” />
+            </schema>
+
+        import
+            <schema xmlns=“http://www.w3.org/2001/XMLSchema targetNamespace=“http://www.example.org/NS2” xmlns:imp1=“http://www.importme.org/Import1”>
+            <import namespace=“http//www.importme.org/Import1/schemas/Import1.xsd” />
+            <element name=“test1” type=“imp1:testType” />
+            </schema>
+

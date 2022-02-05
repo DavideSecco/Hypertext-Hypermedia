@@ -1,0 +1,161 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	
+    <!-- root element-->
+    <xs:element name="course" >
+		<xs:complexType >
+			<xs:sequence>
+                <xs:element ref="author" />
+				<xs:element name="classes" type="classesType" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="information" type="informationType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+    <!-- Component (section) -->
+    <xs:complexType name="classesType">
+		<xs:sequence>
+			<xs:element name="component" type="componentType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+
+        <xs:attribute ref="kind" use="required"/>
+        
+        <xs:attribute name="obbligatory" use="optional" default="no">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="yes|no" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+	</xs:complexType>
+	
+    <xs:complexType name="componentType">
+		<xs:sequence>
+			<xs:element name="topic" type="xs:string" />
+			<xs:element name="theme" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="score" type="xs:integer" />
+        </xs:sequence>
+
+        <xs:attribute name="id" type="xs:byte" />
+	</xs:complexType>
+	
+    <!-- Final part about information -->
+    <xs:complexType name="informationType">
+		<xs:sequence>
+
+			<xs:element name="facts" type="factsType" />
+            <xs:element name="links" type="linksType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="factsType">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" />
+            <xs:element ref="author"/>
+
+            <xs:element name="text" minOccurs="0" >
+                <xs:complexType mixed="true">
+                    <xs:sequence>
+                        <xs:element name="subtitle" type="xs:string" minOccurs="0" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+		</xs:sequence>
+		<xs:attribute name="about" type="xs:string" />
+	</xs:complexType>
+
+        <!-- link: -->
+            <xs:complexType name="linksType">
+                <xs:sequence>
+                    <xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>   
+            </xs:complexType>   
+ 
+            <xs:element name="link" type="refType" />
+
+            <xs:complexType name="refType">  
+                <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                        <xs:attribute name="source" type="xs:string" />
+                    </xs:extension>
+                </xs:simpleContent>
+            </xs:complexType> 
+
+    <!-- Scrivere il mio nome -->
+	<xs:element name="author" type="authorType" />
+    
+	<xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="surname" type="longStringType" />
+		</xs:sequence>
+	</xs:complexType>
+
+    <!-- Attrbute for big element -->
+    <xs:attribute name="kind">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="lecture" />
+                <xs:enumeration value="laboratory" />
+                <xs:enumeration value="Project" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <!-- immagini -->
+    <xs:element name="media">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name ="image" type="refType" minOccurs="0" maxOccurs="unbounded" />  
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- shortStringType -->
+    <xs:simpleType name="shortStringType">
+        <xs:restriction base="xs:string">            
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- longStringType -->
+    <xs:simpleType name="longStringType">
+        <xs:restriction base="xs:string">            
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Exercise 11 -->
+    <xs:element name="info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:sequence>
+                    <xs:element name="ECTS" minOccurs="0">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="2"/>
+                            </xs:restriction> 
+                        </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="mounth_duration"  type="mounth_durationType"/> 
+                </xs:sequence>
+
+                <xs:choice>
+                        <xs:element name="online" type="xs:string" />
+                        <xs:element name="onsite" type="xs:string" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="mounth_durationType">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="4" />
+            <xs:minInclusive value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+</xs:schema>

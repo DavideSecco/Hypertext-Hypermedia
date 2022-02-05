@@ -1,0 +1,17 @@
+XML – a good style
+    the appearance of the document
+        <?xml version="1.0" encoding="UTF-8"?>
+        <books>
+            <book category="fantasy">
+                <title>The colour of magic</title>
+                <author>Terry Pratchett</author>
+                <year>2012</year> 
+                <price>30.00</price> 
+            </book>
+            <book category="fantasy"> 
+                <title>Guards! Guards!</title>
+                <author>Terry Pratchett</author>
+                <year>2012</year>
+                <price>30.00</price>
+            </book>
+        </books>

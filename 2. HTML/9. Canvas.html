@@ -1,0 +1,18 @@
+Possibility of drawing
+◦ The <canvas> tag is only a container for graphics
+◦ A canvas is a rectangular area of a raster graphics
+◦ JavaScript is needed for drawing on canvas
+
+<canvas id="my-first-canvas" width="360" height="240"> 
+    Here we give the text displayed when the browser does not 
+    support canvas. 
+</canvas>
+
+<script>
+    var c = document.getElementById( 'my-first-canvas' ); 
+    var cxt = c.getContext('2d'); 
+    var grd=cxt.createLinearGradient(0,0,175,50);
+    grd.addColorStop(0,"#FF0000");grd.addColorStop(1,"#0000FF");
+    cxt.fillStyle=grd; cxt.fillRect(0,0,175,50);
+</script>
+    

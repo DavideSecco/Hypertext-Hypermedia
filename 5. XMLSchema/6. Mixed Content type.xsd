@@ -1,0 +1,78 @@
+<!-- Mixed content type -->
+    It supports all properties of the complex type:
+    ◦ minOccurs, maxOccurs, sequence ...
+        <complexType name=“MyName2” mixed=“true”>
+            <sequence>
+                <element name=“FirstName” maxOccurs=“2” type=“string” />
+                <element name=“LastName” type=“string” />
+            </sequence>
+        </complexType>
+
+        <person>
+            Definicja dla osoby 
+            <FirstName>Anna</FirstName> bez innych imion
+            <FirstName>Empty</FirstName>
+            <LastName>Kowalska</LastName> z mieszaną zawartością
+        </person>
+
+<!-- anyType -->
+    The elements by default are "any type" anyType
+    ◦ The following declarations are equivalent:
+        <xsd:element name=“Data” />
+        <xsd:element name=“Data” type=“xsd:anyType”/>
+
+<!-- Element any -->
+    The <any> element enables us to extend the XML document with elements not specified by the schema.
+    Puoi scrivere altro dopo il cognome.
+        <complexType name=“personType” mixed=“true”>
+            <sequence>
+                <element name=“FirstName” maxOccurs=“2” type=“string” />
+                <element name=“LastName” type=“string” />
+                <any minOccurs="0"/>
+            </sequence>
+        </complexType>
+
+<!-- Empty content -->
+    element may be empty
+    Dichiaro un elemento complesso ma dentro non ci metto nulla
+        <xsd:element name=“emptyElement”>
+            <xsd:complexType/>
+        </xsd:element>
+    
+    XML File:
+    <emptyElement />
+
+<!-- Element group -->
+    the group element is used to define a group of elements to be used in complex type definitions.
+    named groups of model, fragments of content models that you can reuse
+    
+    Benefits
+    ◦ indicates that some complex types have similar subelements
+    ◦ allows you to create more compact schema
+    
+    !! The group can not contain both elements and attributes
+    
+    !! Groups must be declared globally
+
+    <complexType name=“StudentType” mixed=“true”>
+        <sequence>
+            <group ref=“MyGroup” /> <!-- -->
+        </sequence>
+    </complexType>
+
+    <complexType name=“TeacherType” mixed=“true”>
+        <sequence>
+            <element name=“Title” maxOccurs=“3” type=“string” />
+            <group ref=“MyGroup” /> <!-- -->
+        </sequence>
+    </complexType>
+
+    <group name=“MyGroup” > <!-- -->
+        <sequence>
+            <element name=“FirstName” type=“string” />
+            <element name=“LastName” type=“string” />
+        </sequence>
+    </group>
+
+
+

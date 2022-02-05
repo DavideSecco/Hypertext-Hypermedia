@@ -1,0 +1,40 @@
+<!-- Content type -->
+	Char content:
+		<!-- DTD --> <!ELEMENT computer (#PCDATA)>
+		<!-- xml --> <computer> my computer </computer>
+
+	Mixed content:
+		<!-- dtd --> <!ELEMENT computer (#PCDATA | ram | disk | monitor)*>
+		<!-- xml -->
+		<computer> 
+			computer with 
+			<ram> 2 </ram>
+			<monitor></monitor>
+		</computer>
+
+	ANY content
+		◦ any element declared in the DTD
+		<!ELEMENT computer ANY>
+		
+	EMPTY content
+		◦ must be empty
+			<!ELEMENT point EMPTY>  		<point/>
+			<!ELEMENT computer (#PCDATA)>	<computer> </computer>
+
+	<!-- EXAMPLE -->
+		DTD:
+		<!ELEMENT computer(model, (out_dev|in_dev)+, number)>
+
+		Possibili xml:
+		1)	<computer>
+				<model> </model>
+				<outdev> </outdev>
+				<number> </number>
+			</computer>
+
+		2)	<computer>
+				<model> </model>
+				<outdev> </outdev> <!-- c'è il "+" e ne posso mettere quanti ne voglio -->
+				<in_dev> </in_dev>
+				<number> </number>
+			</computer>

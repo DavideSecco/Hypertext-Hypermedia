@@ -1,0 +1,16 @@
+<!-- nil (annullabile) content -->
+    attribute nillable
+    indicates that the element may not have content
+    in XML xsd:nill=”true”
+    
+        <complexType name=“Price”>
+            <sequence>
+                <element name=“amount” type=“integer” />
+                <element name=“currency” type=“string” nillable=“true” />
+            </sequence>
+        </complexType>
+
+        <Price>
+            <amount>100</amount>
+            <currency xsd:nil=“true” />
+        </Price>

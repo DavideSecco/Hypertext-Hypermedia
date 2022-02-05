@@ -1,0 +1,58 @@
+<!-- Derived complex types -->
+restriction
+    ◦ the set of values of the new type is a subset
+    ◦ similar to simple types
+extension
+    ◦ adding additional elements to the base type
+
+Ci sono due vie: restringere un type oppure aggiungere valori a un base type
+
+    <!-- Derive by extension -->
+        <complexType name=“personType” >            <!-- attributo base con nome e cognome -->
+            <sequence>
+                <element name=“name” type=“string” />
+                <element name=“surname” type=“string” />
+            </sequence>
+        </complexType>
+
+        <complexType name=“extendedType” >          <!-- attributo esteso con aggiunta mail -->
+            <complexContent>
+                <extension base=“personType”>
+                    <sequence>
+                        <element name=“email” type=“string” />
+                    </sequence>
+                </extension>
+            </complexContent> 
+        </complexType>
+
+        ATTENZIONE: ATTRIBUTO NON DERIVABILE:
+        Se non voglio che un attributo sia derivabile mi basta aggiungere l'attributo final="#all"
+        E qualsiasi attributo derivato da quello darà errore:
+        <complexType name=“personType” final="#all">            
+            ...
+        </complexType>
+
+    <!-- Derive by restriction -->
+        <xsd:complexType name="Publication">        <!-- attributo base con scrittori infiniti-->
+            <xsd:sequence>
+                <xsd:element name="Title" type="xsd:string" maxOccurs="unbounded"/>
+                <xsd:element name="Author" type="xsd:string" maxOccurs="unbounded"/>
+                <xsd:element name="Date" type="xsd:gYear"/>
+            </xsd:sequence>
+        </xsd:complexType>
+
+        <xsd:complexType name= "SingleAuthorPublication">   <!-- attributo derivato in cui ho solo un autore -->
+            <xsd:complexContent>
+                <xsd:restriction base="Publication">    <!-- -->
+                    <xsd:sequence>
+                        <xsd:element name="Title" type="xsd:string" maxOccurs="unbounded"/>
+                        <xsd:element name="Author" type="xsd:string"/>
+                        <xsd:element name="Date" type="xsd:gYear"/>
+                    </xsd:sequence>
+                </xsd:restriction>
+            </xsd:complexContent>
+        </xsd:complexType>
+
+        NOTA: Se vuoi eliminare un elemento nell'elemento derivato, esso deve necessariamente essere opzionale nel base type
+
+

@@ -1,0 +1,120 @@
+body{
+    background-color: rgb(199, 218, 255);
+	font-size: large;
+}
+
+
+nav{
+	background: #77a0ff; 
+	margin: 0 0 0 0; 
+    font-style: italic;
+	padding: 0.5px;
+}
+/*
+footer { 
+	height:50px;
+	background:#000;
+	color:#FFF;
+	text-align:center;
+	margin-top:10px;
+	padding:5px;
+}
+*/
+h3{
+    color: rgb(100, 100, 255);
+}
+
+/* IDENTIFIER */
+#header { 
+	background: #0928c5; 
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+#back{
+	background: #77a0ff; 
+	margin: 0 0 0 0; 
+    font-style: italic;
+	padding: 15px; 
+}
+
+/* CLASSES (at least 3) */
+.right{ 
+float: right;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.raster {
+    width: 33%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    align-content: center;
+    transition: transform .2s;
+}
+
+.left{ 
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+tr.first{
+	text-align: center;
+	font-weight: bold;
+}
+
+
+img.raster:hover {
+    transform: scale(1.5);
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+	padding: 10px;
+}
+
+table{
+	margin: auto;
+}
+
+/* PSEUDO-CLASS */
+a:visited{
+	color:green
+}
+
+/* PSEUDO-ELEMENT */
+p.elegant::first-letter {
+	color:rgb(0, 0, 0); 
+	font-size:20pt
+}
+
+/* Responsive page */
+@media only screen and (max-width: 600px) {
+    .right{
+        display: none;
+    }
+}
+
+table{
+	table-layout: auto;
+	width: 80%;
+}
+
+.animation{
+	animation-duration: 4s;
+	animation-name: slidein;
+}
+
+@keyframes slidein{
+	from{
+		margin-right: 100%;
+		width: 100%;
+	}
+}

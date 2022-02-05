@@ -1,0 +1,38 @@
+/* POSITIOING */
+    /* static */
+        selector { position: static; other parameters }
+        img {position: static; left:70px; top:50px}
+
+    /* absolute */
+        position of the element is determined by specifying the distance from the edges of the container (left, right, top, bottom).
+        
+        selector { position: absolute; other parameters}
+        img {position: absolute; left:70px; top:50px}
+
+    /* Relative */
+        the position of the element is moved by the values specified in left, right, top and bottom relative to the initial position.
+        
+        selector { position: relative; other parameters}
+        img {position: relative; left:70px; top:50px}
+
+    /* fixed */ 
+        an element locked in a specific place on the screen, constantly visible and does not scroll with the rest of the page.
+        
+        selector { position: fixed; other parameters }
+        img {position: fixed; left:70px; top:50px}
+
+    /* overlaping (z-index) */
+        ◦ defines the overlapping of elements selector { position:type; other parameters; z-index: number }
+        img {position:fixed; left:70px; top:50px; z-index:-1;}
+
+    /* float */
+        setting a given element relative to elements that are adjacent to it
+        selector { float: right/left/none; }
+        img {float: right; left:70px; top:50px}
+
+
+        
+
+    
+
+
